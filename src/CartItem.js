@@ -6,7 +6,7 @@ class CartItem extends React.Component {
         this.state = {
             price: 100000,
             title: 'Samsung Galaxy S21',
-            qty: 1,
+            qty: 0,
             img: ''
         }
     }
@@ -18,9 +18,16 @@ class CartItem extends React.Component {
         });
     }
     decreaseQuantity = () => {
-        this.setState({
+        const { qty } = this.state;
+
+        if (qty === 0) {
+            return;
+        }
+        this.setState((prevState) =>{
+            return {
             qty: this.state.qty - 1
-        })
+        }
+    });
     }
     render() {
         const { price, title,qty} = this.state;
