@@ -6,6 +6,11 @@ class Cart extends React.Component {
         return (
             <div>
                 <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+
             </div>
         );
     }
